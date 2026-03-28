@@ -1,0 +1,26 @@
+# Python
+backend/.venv/
+backend/__pycache__/
+backend/**/*.pyc
+backend/app/__pycache__/
+backend/app/services/__pycache__/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Environment and local data
+backend/.env
+backend/*.db
+backend/*.log
+backend/sample_resume.png
+cloudflared.exe
+cloudflared*.log
+frontend/localtunnel*.log
+
+# Local tooling
+.codex/
+
+# OS
+.DS_Store
+Thumbs.db
