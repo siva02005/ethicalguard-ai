@@ -1,0 +1,7 @@
+[packages]
+libxcb = "*"
+libx11 = "*"
+libxext = "*"
+libxrender = "*"
+libgl1-mesa-glx = "*"
+libglib2.0-0 = "*"
