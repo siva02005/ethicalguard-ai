@@ -93,10 +93,11 @@ See `backend/.env.example`.
 2. Create a new Railway project from the GitHub repo.
 3. Set the service root to `backend`.
 4. Railway can use [backend/railway.json](C:\Users\Dell\Documents\prototype\backend\railway.json).
-5. Add environment variables:
+5. Railway Nixpacks system libraries for OCR/OpenCV are defined in [backend/nixpacks.toml](C:\Users\Dell\Documents\prototype\backend\nixpacks.toml).
+6. Add environment variables:
    - `DATABASE_URL=<railway-postgres-connection-string>`
    - `CORS_ORIGINS=https://aicareerassist.netlify.app`
-6. Your backend link will look like:
+7. Your backend link will look like:
    - `https://your-app.up.railway.app`
 
 ### Always-On Production Setup
