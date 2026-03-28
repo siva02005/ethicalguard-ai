@@ -69,6 +69,15 @@ See `backend/.env.example`.
 4. Deploy. Your frontend link will look like:
    - `https://ethicalguard-ai.vercel.app`
 
+### Frontend on Netlify
+1. Push this project to GitHub.
+2. Import the repository into Netlify.
+3. Netlify can read [netlify.toml](C:\Users\Dell\Documents\prototype\netlify.toml) automatically.
+4. Add environment variable:
+   - `VITE_API_BASE_URL=https://your-render-backend.onrender.com`
+5. Deploy. Your frontend link will look like:
+   - `https://ethicalguard-ai.netlify.app`
+
 ### Backend on Render
 1. Push this project to GitHub.
 2. Create a new Render Blueprint using [render.yaml](C:\Users\Dell\Documents\prototype\render.yaml).
@@ -79,10 +88,25 @@ See `backend/.env.example`.
 6. Your backend link will look like:
    - `https://ethicalguard-api.onrender.com`
 
+### Backend on Railway
+1. Push this project to GitHub.
+2. Create a new Railway project from the GitHub repo.
+3. Set the service root to `backend`.
+4. Railway can use [backend/railway.json](C:\Users\Dell\Documents\prototype\backend\railway.json).
+5. Add environment variables:
+   - `DATABASE_URL=<railway-postgres-connection-string>`
+   - `CORS_ORIGINS=https://aicareerassist.netlify.app`
+6. Your backend link will look like:
+   - `https://your-app.up.railway.app`
+
 ### Always-On Production Setup
 - Frontend host: Vercel
+- Frontend host alternative: Netlify
 - Backend host: Render
+- Backend host alternative: Railway
 - Database: Render PostgreSQL
+- Database alternative: Railway PostgreSQL
 - Frontend production env example: [frontend/.env.production.example](C:\Users\Dell\Documents\prototype\frontend\.env.production.example)
 - Vercel config: [frontend/vercel.json](C:\Users\Dell\Documents\prototype\frontend\vercel.json)
+- Netlify config: [netlify.toml](C:\Users\Dell\Documents\prototype\netlify.toml)
 - Render blueprint: [render.yaml](C:\Users\Dell\Documents\prototype\render.yaml)
