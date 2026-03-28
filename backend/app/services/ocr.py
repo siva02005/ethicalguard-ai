@@ -5,13 +5,20 @@ from PIL import Image
 from rapidocr_onnxruntime import RapidOCR
 
 
-ocr_engine = RapidOCR()
+ocr_engine = None
+
+
+def _get_ocr_engine():
+    global ocr_engine
+    if ocr_engine is None:
+        ocr_engine = RapidOCR()
+    return ocr_engine
 
 
 def extract_text_from_image_bytes(raw: bytes) -> str:
     image = Image.open(BytesIO(raw)).convert("RGB")
     image_array = np.array(image)
-    result, _ = ocr_engine(image_array)
+    result, _ = _get_ocr_engine()(image_array)
     if not result:
         return ""
 
