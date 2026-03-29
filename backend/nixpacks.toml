@@ -1,4 +1,5 @@
 [phases.setup]
+nixPkgs = ["python312Full"]
 aptPkgs = [
   "libgl1",
   "libglib2.0-0",
@@ -9,7 +10,7 @@ aptPkgs = [
 ]
 
 [phases.install]
-cmds = ["python -m pip install -r requirements.txt"]
+cmds = ["python3 -m pip install --upgrade pip", "python3 -m pip install -r requirements.txt"]
 
 [start]
 cmd = "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
