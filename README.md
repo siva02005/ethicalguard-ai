@@ -78,6 +78,17 @@ See `backend/.env.example`.
 5. Deploy. Your frontend link will look like:
    - `https://ethicalguard-ai.netlify.app`
 
+### Frontend on Cloudflare Workers
+1. Go to the [frontend](C:\Users\Dell\Documents\prototype\frontend) folder.
+2. Add environment variable before building:
+   - `VITE_API_BASE_URL=https://your-backend-url.onrender.com`
+3. Build and deploy:
+   - `npm install`
+   - `npm run cf:deploy`
+4. Cloudflare Workers will use [frontend/wrangler.toml](C:\Users\Dell\Documents\prototype\frontend\wrangler.toml) to serve the Vite `dist` output as a single-page app.
+5. Your frontend link will look like:
+   - `https://ethicalguard-ai.<your-subdomain>.workers.dev`
+
 ### Backend on Render
 1. Push this project to GitHub.
 2. Create a new Render Blueprint using [render.yaml](C:\Users\Dell\Documents\prototype\render.yaml).
@@ -103,6 +114,7 @@ See `backend/.env.example`.
 ### Always-On Production Setup
 - Frontend host: Vercel
 - Frontend host alternative: Netlify
+- Frontend host alternative: Cloudflare Workers
 - Backend host: Render
 - Backend host alternative: Railway
 - Database: Render PostgreSQL
@@ -110,4 +122,5 @@ See `backend/.env.example`.
 - Frontend production env example: [frontend/.env.production.example](C:\Users\Dell\Documents\prototype\frontend\.env.production.example)
 - Vercel config: [frontend/vercel.json](C:\Users\Dell\Documents\prototype\frontend\vercel.json)
 - Netlify config: [netlify.toml](C:\Users\Dell\Documents\prototype\netlify.toml)
+- Cloudflare Workers config: [frontend/wrangler.toml](C:\Users\Dell\Documents\prototype\frontend\wrangler.toml)
 - Render blueprint: [render.yaml](C:\Users\Dell\Documents\prototype\render.yaml)
